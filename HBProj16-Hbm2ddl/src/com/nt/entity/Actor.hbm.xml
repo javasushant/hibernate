@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="com.nt.entity.Actor" table="Actor">
+	<!-- Singular id field cfg and mapping -->
+	  <id name="actorid" type="int" column="ACTORID"> 
+	  <generator class="increment" />
+	   </id>
+	    <!-- other properties mapping --> 
+	    <property name="actorName"  length="20" unique="false" not-null="true" /> 
+		<property name="actorAddrs"  length="30" /> 
+		<property name="phone"  type="long" /> 
+		<property name="renumeration"  type="float" /> 
+		<property name="brand" type="string"/>
+		</class>
+</hibernate-mapping>
