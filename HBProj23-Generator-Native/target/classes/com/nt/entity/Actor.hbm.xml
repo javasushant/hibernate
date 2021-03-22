@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="com.nt.entity.Actor">
+		<id name="actorid" type="int">
+
+			<generator class="native" />
+		</id>
+		<property name="actorName" type="string" length="25" />
+		<property name="actorAddrs" type="string" />
+		<property name="phone" type="long" />
+		<property name="renumeration" type="float"></property>
+	</class>
+</hibernate-mapping>

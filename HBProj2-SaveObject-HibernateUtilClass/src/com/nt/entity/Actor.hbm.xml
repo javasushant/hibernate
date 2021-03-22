@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- <class name="com.nt.entity.Actor" table="Actor"> Singular id field 
+		cfg and mapping <id name="actorid" type="int" column="ACTORID"> <generator 
+		class="increment" /> </id> other properties mapping <property name="actorName" 
+		column="ACTORNAME" length="20" unique="false" not-null="true" /> <property 
+		name="actorAddrs" column="ACTORADDRS" length="30" /> <property name="phone" 
+		column="PHONE" type="long" /> <property name="renumeration" column="RENUMERATION" 
+		type="float" /> </class> -->
+
+	<!-- <class name="com.nt.entity.Actor" table="Actor"> Singular id field 
+		cfg and mapping <id name="actorid" type="int"> <column name="ACTORID" /> 
+		<generator class="increment" /> </id> other properties mapping <property 
+		name="actorName" > <column name="ACTORNAME" length="20" unique="false" not-null="true" 
+		/> </property> <property name="actorAddrs" > <column name="ACTORADDRS" length="30" 
+		/> </property> <property name="phone" type="long"> <column name="PHONE" /> 
+		</property> <property name="renumeration" type="float"> <column name="RENUMERATION" 
+		/> </property> </class> -->
+
+	<class name="com.nt.entity.Actor" dynamic-insert="true" >
+
+		<!-- Singular id field cfg and mapping -->
+		
+		<id name="actorid" type="int">
+			<generator class="increment" />
+		</id>
+		
+		<!-- other properties mapping -->
+		
+		<property name="actorName" type="string" length="20" unique="false"
+			not-null="true" />
+		<property name="actorAddrs" type="string" length="30" />
+		<property name="phone" type="long" />
+		<property name="renumeration" type="float" />
+	</class>
+</hibernate-mapping>
