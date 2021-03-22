@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Connection properties for Oracle Db s/w -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:SYS</property>
+		<property name="hibernate.connection.user">system</property>
+		<property name="hibernate.connection.password">manager</property>
+		
+		<!-- Cfg Hikaricp -->
+		<!-- <property name="connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property> -->
+		<!-- 
+		<property name="hikari.connectionTimeout">50000</property>
+		<property name="hibernate.hikari.minimumIdle">10</property>
+		<property name="hibernate.hikari.maximumPoolSize">20</property>
+		<property name="hibernate.hikari.idleTimeout">30000</property> -->
+		<!-- hibernate optional configuration -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>
+
+		<!-- mendatory confugeration -->
+		<mapping resource="com/nt/entity/Employee.hbm.xml" />
+		<mapping resource="com/nt/entity/NGO_Member.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

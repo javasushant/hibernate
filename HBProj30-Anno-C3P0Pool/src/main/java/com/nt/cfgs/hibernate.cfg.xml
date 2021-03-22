@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Connection properties for Oracle Db s/w -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:SYS</property>
+		<property name="hibernate.connection.user">system</property>
+		<property name="hibernate.connection.password">manager</property>
+		<property name="connection.pool_size">10</property>
+
+		<!-- c3po connectionprovider -->
+		<property name="connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+
+		<!-- cfg propertyof connection pool -->
+
+		<property name="hibernate.c3p0.min_size">10</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.validate">1800</property>
+
+		<!-- Cfg MySQL Connection property -->
+		<!-- <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> 
+			<property name="hibernate.connection.url">jdbc:mysql:///ntaj414db</property> 
+			<property name="hibernate.connection.user">root</property> <property name="hibernate.connection.password">root</property> -->
+
+		<!-- hibernate optional configuration -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- <property name="dialect">org.hibernate.dialect.Oracle12cDialect</property> -->
+		<!-- <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property> -->
+
+		<!-- mendatory confugeration -->
+		<mapping class="com.nt.entity.Programmer_Project" />
+	</session-factory>
+</hibernate-configuration>
