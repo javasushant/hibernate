@@ -24,6 +24,6 @@
 		<property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>
 	
 	<!-- Mapping file cfg -->
-	<mapping resource="com/nt/entity/Employee.hbm.xml"/>
+	<mapping resource="com/nt/entity/Person.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
