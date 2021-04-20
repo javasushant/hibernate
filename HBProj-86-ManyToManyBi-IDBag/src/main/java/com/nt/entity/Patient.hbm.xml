@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.nt.entity.Patient" table="MTOM_PATIENT_IDBAG">
+		<id name="patId" type="long">
+			<generator class="sequence" />
+		</id>
+		<property name="patName" type="string" length="30" />
+		<property name="patAddrs" type="string" length="30" />
+		<property name="problem" type="string" length="30" />
+		<idbag name="doctors" cascade="all"
+			table="MTOM_DOCTORS_PATIENTS_IDBAG" lazy="extra">
+			<collection-id type="int" column="LIST_BAG_INDEX">
+				<generator class="sequence" />
+			</collection-id>
+			<key column="PAT_ID" />
+			<many-to-many class="com.nt.entity.Doctor"
+				column="DOC_ID" />
+		</idbag>
+	</class>
+
+</hibernate-mapping>
+  
+ 
